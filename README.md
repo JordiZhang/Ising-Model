@@ -17,7 +17,7 @@ temperature = 0.1
 
 model = IsingModel(size, temperature)
 ```
-Initialize the total energy of the system.
+Initialize the total energy of the system. Note: This is required before running a simulation.
 ```
 model.energy_total()
 ```
