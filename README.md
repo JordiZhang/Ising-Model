@@ -41,4 +41,4 @@ We start from a state $\mu$ with energy $E_{\mu}$.
 Identical to Glauber dynamics but instead of choosing a random spin and flipping it, we choose 2 random spins and swap them with each other. Glauber dynamics has non-conserved magnetization due to flipping the spin, meanwhile Kawasaki conserves the magnetization.
 
 ## Example Simulation
-![glauber](https://github.com/user-attachments/assets/5535d1af-b9eb-4c8e-a90f-52d9928b7001)
+![glauber](glauber.gif)
