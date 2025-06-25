@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import animation
 
-class ising_model:
+class IsingModel:
     def __init__(self, size, temperature):
         if not isinstance(size, int):
             raise TypeError("Size must be an integer")
@@ -20,14 +20,10 @@ class ising_model:
     def energy_point(self, i, j):
         # calculates energy contribution from a given point
         E = 0
-        if i != 0:
-            E += -self.lattice[i, j] * self.lattice[i - 1, j]
-        if i != self.size - 1:
-            E += -self.lattice[i, j] * self.lattice[i + 1, j]
-        if j != 0:
-            E += -self.lattice[i, j] * self.lattice[i, j - 1]
-        if j != self.size - 1:
-            E += -self.lattice[i, j] * self.lattice[i, j + 1]
+        E += -self.lattice[i, j] * np.roll(self.lattice, 1, axis = 0)[i, j]
+        E += -self.lattice[i, j] * np.roll(self.lattice, -1, axis=0)[i, j]
+        E += -self.lattice[i, j] * np.roll(self.lattice, 1, axis=1)[i, j]
+        E += -self.lattice[i, j] * np.roll(self.lattice, -1, axis=1)[i, j]
         return E
 
     def energy_total(self):
