@@ -40,5 +40,15 @@ We start from a state $\mu$ with energy $E_{\mu}$.
 ## Kawasaki Dynamics
 Identical to Glauber dynamics but instead of choosing a random spin and flipping it, we choose 2 random spins and swap them with each other. Glauber dynamics has non-conserved magnetization due to flipping the spin, meanwhile Kawasaki conserves the magnetization.
 
-## Example Simulation
+## Measurement
+We can measure the properties of the system by running the measurement() method. This method simulates the ising model at the given temperatures, allows the system to reach an equilibrium, then takes 1000 measurements of the magnetization, magnetization squared, energy and energy squared. After measurements are done, the data is saved as a .csv file for each temperature and for the dynamics chosen.
+```
+dynamics = "g"
+temperatures = np.arange(1, 3.1, 0.1).round(1) # Note these are the temperatures to be measured. 
+model.measurement(dynamics, temperatures) 
+```
+This data can then be used to investigate phase transitions, magnetization, energy, susceptibility, specific heat capacity etc.
+
+## Example Simulation, Measurements and Plots
 ![glauber](glauber.gif)
+![glauber](glauber_results.png)
