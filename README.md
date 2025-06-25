@@ -1,6 +1,5 @@
 # Ising Model 
----
-This project implements a 2D Ising model, simulating ferromagnetic spin systems on a lattice using both Glauber and Kawasaki dynamics.
+Monte-Carlo simulations of ferromagnetic spin systems on a lattice using Markov chains and the Metropolis algorithm to generate states according to the Boltzmann distribution for the Ising Model. We use 2 different Markov chains, one using Glauber dynamics and the other using Kawasaki dynamics. For simplicity, we set the Boltzmann constant to 1 without loss of generality.
 
 ## Installing
 Download ising.py and import.
@@ -29,3 +28,14 @@ or
 ```
 model.sim_kawasaki()
 ```
+
+## Glauber Dynamics
+We start from a state $\mu$ with energy $E_{\mu}$. 
+1. We generate a new candidate state, $\nu$, by choosing a random spin and flipping it.
+2. Compute the energy of the new state $E_{\nu}$ and thus the energy difference $\Delta E = E_{\nu} - E_{\mu}$.
+3. Metropolis Algorithm:
+   - If $\Delta E < 0$, accept the new state as it is energetically favourable.
+   - If $\Delta E > 0$, accept the new state with probability $exp(\frac{\Delta E}{k_{B} T})$
+  
+## Kawasaki Dynamics
+Identical to Glauber dynamics but instead of choosing a random spin and flipping it, we choose 2 random spins and swap them with each other. Glauber dynamics has non-conserved magnetization due to flipping the spin, meanwhile Kawasaki conserves the magnetization.
