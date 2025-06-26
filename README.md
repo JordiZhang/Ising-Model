@@ -5,13 +5,13 @@ Monte-Carlo simulations of ferromagnetic spin systems on a lattice using Markov 
 
 ## Installing
 Download ising.py and import.
-```
+```python
 from ising import IsingModel
 ```
 
 ## Usage
 Create an IsingModel object as needed.
-```
+```python
 # ising model parameters
 size = 50
 temperature = 0.1
@@ -19,15 +19,15 @@ temperature = 0.1
 model = IsingModel(size, temperature)
 ```
 Initialize the total energy of the system. Note: This is required before running a simulation.
-```
+```python
 model.energy_total()
 ```
 Simulate using Glauber or Kawasaki Dynamics. The simulation is automatically animated on matplotlib.
-```
+```python
 model.sim_glauber()
 ```
 or
-```
+```python
 model.sim_kawasaki()
 ```
 
@@ -44,7 +44,7 @@ Identical to Glauber dynamics but instead of choosing a random spin and flipping
 
 ## Measurement
 We can measure the properties of the system by running the measurement() method. This method simulates the ising model at the given temperatures, allows the system to reach an equilibrium, then takes 1000 measurements of the magnetization, magnetization squared, energy and energy squared. After measurements are done, the data is saved as a .csv file for each temperature and for the dynamics chosen.
-```
+```python
 dynamics = "g"
 temperatures = np.arange(1, 3.1, 0.1).round(1) # Note these are the temperatures to be measured. 
 model.measurement(dynamics, temperatures) 
