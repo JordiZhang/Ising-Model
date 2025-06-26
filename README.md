@@ -50,5 +50,8 @@ model.measurement(dynamics, temperatures)
 This data can then be used to investigate phase transitions, magnetization, energy, susceptibility, specific heat capacity etc.
 
 ## Example Simulation, Measurements and Plots
+50x50 Ising Model using Glauber dynamics.
 ![glauber](glauber.gif)
+
+After running measurements, we can do data analysis as required. In this case we have calculated the susceptibility and the specific heat capacity. Includes black error bars calculated using the bootstrap method.
 ![glauber](glauber_results.png)
