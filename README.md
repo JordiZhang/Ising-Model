@@ -51,7 +51,9 @@ This data can then be used to investigate phase transitions, magnetization, ener
 
 ## Example Simulation, Measurements and Plots
 50x50 Ising Model using Glauber dynamics.
+
 ![glauber](glauber.gif)
 
-After running measurements, we can do data analysis as required. In this case we have calculated the susceptibility and the specific heat capacity. Includes black error bars calculated using the bootstrap method.
+After running measurements, we can do data analysis as required. In this case we have calculated the susceptibility and the specific heat capacity. Includes black error bars calculated using the bootstrap method. We can see that around T = 2.2, the susceptibility rises very quickly and the model spontaneously magnetises under glauber dynamics.
+
 ![glauber](glauber_results.png)
