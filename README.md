@@ -1,6 +1,8 @@
 # Ising Model 
 Monte-Carlo simulations of ferromagnetic spin systems on a lattice using Markov chains and the Metropolis algorithm to generate states according to the Boltzmann distribution for the Ising Model. We use 2 different Markov chains, one using Glauber dynamics and the other using Kawasaki dynamics. For simplicity, we set the Boltzmann constant to 1 without loss of generality.
 
+![glauber](glauber.gif)
+
 ## Installing
 Download ising.py and import.
 ```
@@ -49,11 +51,7 @@ model.measurement(dynamics, temperatures)
 ```
 This data can then be used to investigate phase transitions, magnetization, energy, susceptibility, specific heat capacity etc.
 
-## Example Simulation, Measurements and Plots
-50x50 Ising Model using Glauber dynamics.
-
-![glauber](glauber.gif)
-
-After running measurements, we can do data analysis as required. In this case we have calculated the susceptibility and the specific heat capacity. Includes black error bars calculated using the bootstrap method. We can see that around T = 2.2, the susceptibility rises very quickly and the model spontaneously magnetises under glauber dynamics.
+## Example Measurements and Plots
+After running measurements, we can do data analysis as required. In this case we have calculated the susceptibility and the specific heat capacity for a 50x50 lattice. Includes black error bars calculated using the bootstrap method. We can see that around T = 2.2, the susceptibility rises very quickly and the model spontaneously magnetises under glauber dynamics.
 
 ![glauber](glauber_results.png)
